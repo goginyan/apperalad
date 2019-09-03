@@ -1,0 +1,9 @@
+2019/09/03-15:41:41.250 d6a Reusing MANIFEST Session Storage/MANIFEST-000001
+2019/09/03-15:41:41.251 d6a Recovering log #3
+2019/09/03-15:41:41.281 d6a Reusing old log Session Storage/000003.log 
+2019/09/03-17:58:43.264 208c Level-0 table #5: started
+2019/09/03-17:58:43.471 208c Level-0 table #5: 21478 bytes OK
+2019/09/03-17:58:43.664 208c Delete type=0 #3
+2019/09/03-18:37:25.452 2877 Level-0 table #7: started
+2019/09/03-18:37:25.521 2877 Level-0 table #7: 19768 bytes OK
+2019/09/03-18:37:25.592 2877 Delete type=0 #4

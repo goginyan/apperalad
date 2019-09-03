@@ -1,0 +1,28 @@
+<header>
+    <div class="container">
+
+        <div class="app-flex-row appspace-content-between">
+            <div class="site-logo">
+                <a routerLink="/"> <img src="assets/img/apparelad.png" alt="Apparelad" /> </a>
+            </div>
+            <nav class="nav site-nav">
+                <button class="navbar-toggler" type="button" (click)="sidebarOpen()">
+                </button>
+                <ul class="main-menu app-flex-row">
+                    <li class="mb-close"> <img src="assets/img/cancel.svg" (click)="sidebarClose()" /> </li>
+                    <li class="list"><a routerLink="/mockups" (click)="sidebarClose()"> Browse Mockups </a></li>
+                    <li class="list pricing"><a routerLink="/pricing" (click)="sidebarClose()"> Pricing </a></li>
+                    <li class="login" *ngIf="!loggedIn"><a class="white-btn" routerLink="/login" (click)="sidebarClose()"> Login </a> </li>
+                    <li class="list loggedin" *ngIf="loggedIn">
+                        <a> {{first_name | titlecase}} {{last_name}} <span class="icon-arrow"> </span> </a>
+                        <ul class="sub-menu">
+                            <li><a routerLink="/edit" (click)="sidebarClose()"> Edit </a> </li>
+                            <li><a (click)="onLogout();sidebarClose();"> Log out </a> </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="close-layer" (click)="sidebarClose()"></div>
+            </nav>
+        </div>
+    </div>
+</header>

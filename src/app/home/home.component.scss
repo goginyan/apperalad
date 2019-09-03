@@ -1,0 +1,651 @@
+/* variable css */
+$primary_text: #2f3843;
+$primary_blue: #0952fc;
+$primary_black: #1b1b1b;
+$black_color: #000;
+$light_black: #202020;
+$font_light: 300;
+$font_regular: 400;
+$font_bold: 700;
+$background_bg: #ffffff;
+$light_block: #1b1b1b;
+$white_color: #fff;
+
+/* font family */
+$global_family: "Lato", sans-serif;
+
+/* text-align  */
+$align-left: left;
+$align-center: center;
+$align-right: right;
+
+/* radius */
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+.content {
+  position: relative;
+
+  .triangle-animation {
+    position: absolute;
+    z-index: 30;
+    right: 2%;
+    bottom: 50%;
+
+    .small-traingle {
+      width: 0;
+      height: 0;
+      border-bottom: 80px solid #f16d9a;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      margin: -28px auto 0;
+    }
+
+    .big-traingle {
+      width: 0;
+      height: 0;
+      border-bottom: 165px solid #80deea;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      margin: 0 auto;
+    }
+  }
+
+  .amazing-apparel {
+    .triangle-animation {
+      bottom: 0;
+      right: 0;
+      .small-traingle {
+        position: absolute;
+        left: -60px;
+        bottom: 0;
+      }
+    }
+  }
+  .banner {
+    background: url(/assets/img/amazing-apparel.jpg) repeat center center;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    .dotted-border {
+      left: 9.5%;
+      top: 56px;
+      position: absolute;
+      z-index: 30;
+    }
+
+    .flex-row-reverse {
+      padding: 30px 0px 0px;
+    }
+
+    .delay-down {
+      left: 60px;
+      position: absolute;
+      top: 60px;
+      z-index: 100;
+    }
+    .dashed-right {
+      right: 2%;
+      bottom: 0px;
+      position: absolute;
+    }
+    .app-flex-row {
+      align-items: center;
+    }
+
+    .banner-description {
+      max-width: 56%;
+      width: 100%;
+      position: relative;
+      padding-left: 5em;
+      .fadeInUp {
+        position: absolute;
+        bottom: 55%;
+        left: 53px;
+      }
+    }
+    .description-content {
+      max-width: 30.375em;
+      width: 100%;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0 0 20px;
+    }
+    h3 {
+      margin: 0 0 30px;
+    }
+
+    .profile-image {
+      position: relative;
+      width: 50%;
+
+      .rightdelay {
+        position: absolute;
+        top: 13%;
+        right: 0%;
+      }
+
+      .delay-fadeupbig {
+        position: absolute;
+        bottom: 24%;
+        top: auto;
+        right: 25%;
+      }
+    }
+    .reverse-triangle {
+      position: absolute;
+      right: 11%;
+    }
+  }
+
+  .amazing-mockups {
+    padding: 5em 0px 4.063em;
+    .mini-container {
+      padding: 0px 0.375em;
+    }
+    h2 {
+      margin: 0em 0em 50px;
+      strong {
+        color: $primary_blue;
+      }
+    }
+    .app-flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-flow: row wrap;
+      align-content: flex-end;
+      padding: 0px;
+    }
+    .amazing-mockups-item {
+      margin: 9px;
+      overflow: hidden;
+  
+      a {
+        display: inline-block;
+            overflow: hidden;
+    
+      }
+    }
+    img {
+      display: block;
+      transition: transform 1.5s ease;
+
+      &:hover { 
+        transition: transform 2s, filter 1.5s ease-in-out;
+        transform: scale(1.2);
+        transform-origin: center center;
+        filter: brightness(50%);
+      }
+
+    }
+  }
+
+  .app-fluide {
+    padding: 0 3em;
+  }
+
+  .how-it-work {
+    .steps {
+      margin-top: 4.063em;
+
+      .step {
+        padding-right: 3.75em;
+        padding-left: 0.938em;
+        background: url(/assets/img/step-arrow.png) no-repeat right center;
+        .step-details {
+          position: relative;
+        }
+        strong {
+          display: block;
+          color: $light_black;
+          font-size: 1.125em;
+          position: absolute;
+          bottom: 3.25em;
+          text-align: $align-center;
+          width: 100%;
+        }
+      }
+      .step:first-child {
+        padding-left: 0px;
+      }
+      .step:last-child {
+        padding-right: 0px;
+        background: none;
+      }
+    }
+  }
+
+  .our-plan {
+    padding: 4.688em 0px;
+
+    h2 {
+      margin-bottom: 40px;
+      color: #202020;
+
+      strong {
+        color: $primary_blue;
+      }
+    }
+
+    h5 {
+      margin-bottom: 60px;
+      color: #202020;
+      font-weight: $font_bold;
+    }
+
+    .personal-plan {
+      max-width: 20.625em;
+      width: 100%;
+      margin: 0 auto;
+      @include border-radius(5px);
+      box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.15);
+      -webkit-box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.15);
+
+      h2 {
+        background: #0952fc;
+        color: $white_color;
+        text-align: $align-center;
+        padding: 23px 0px;
+        font-size: 1.875em;
+        font-weight: $font_bold;
+        margin: 0px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .plan-details {
+        padding: 1.875em 0.938em 3.125em;
+        color: $light_black;
+
+        .price {
+          font-weight: $font_bold;
+          margin-bottom: 20px;
+          strong {
+            font-size: 3.75em;
+          }
+          sup {
+            font-size: 1.875em;
+          }
+        }
+
+        .plan-list {
+          margin-bottom: 45px;
+          li {
+            list-style: none;
+            margin-bottom: 15px;
+          }
+        }
+        .blue-btn {
+          font-weight: 400;
+          line-height: normal;
+          min-width: 233px;
+        }
+      }
+    }
+  }
+  .reviews {
+    padding: 0 0 4.375em;
+    .testimonials-list {
+      color: #2f3843;
+      padding: 0 2.5em;
+
+      img {
+        @include border-radius(50%);
+        margin-bottom: 45px;
+      }
+
+      h4 {
+        margin: 0px 0px 0.313em;
+        color: #2f3843;
+      }
+
+      h6 {
+        margin: 0px 0px 1.875em;
+        color: #2f3843;
+        font-size: 1.063em;
+      }
+
+      p {
+        font-size: 1.063em;
+        line-height: 24px;
+      }
+    }
+    h2 {
+      margin: 0 0 50px;
+    }
+  }
+
+  .amazing-apparel {
+    background: url(/assets/img/amazing-apparel.jpg) repeat center center;
+    padding: 4.375em 0em 3.125em;
+    -webkit-box-shadow: 1px -3px 25px -14px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 1px -3px 25px -14px rgba(0, 0, 0, 0.55);
+    box-shadow: 1px -3px 25px -14px rgba(0, 0, 0, 0.55);
+    position: relative;
+    overflow: hidden;
+
+    .RightBig-delay {
+      position: absolute;
+      right: 15%;
+      top: 10%;
+    }
+
+    .animated-icons {
+      position: absolute;
+      bottom: 15%;
+      left: 10%;
+      .animation-iocn1 {
+        margin-right: 4.688em;
+        margin-bottom: 1.688em;
+      }
+    }
+
+    h2 {
+      font-weight: $font_regular;
+      font-size: 2.188em;
+      margin-bottom: 30px;
+    }
+
+    .graphics1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    .graphics2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .animate {
+    z-index: 20;
+  }
+
+  .diamond {
+    width: 50px;
+    height: 50px;
+    background: #f16d9a;
+    margin: 3px 0 0 30px;
+    /* Rotate */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /* Rotate Origin */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+    background: #93e3ed;
+    border-radius: 50%;
+    right: 71px;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1400px) {
+  .content {
+    .banner {
+      .dotted-border {
+        left: 0px;
+      }
+    }
+
+    .triangle-animation {
+      right: 0;
+      .big-traingle {
+        border-bottom: 110px solid #80deea;
+        border-left: 70px solid transparent;
+        border-right: 70px solid transparent;
+      }
+      .small-traingle {
+        border-bottom: 60px solid #f16d9a;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+      }
+    }
+
+    .amazing-apparel {
+      .triangle-animation {
+        bottom: 0;
+        .small-traingle {
+          position: absolute;
+          left: -60px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .content {
+    .banner {
+      .delay-down {
+        top: 10px;
+      }
+      .banner-description {
+        .fadeInUp {
+          bottom: auto;
+          left: 0;
+          top: 0;
+          width: 35px;
+          height: 36px;
+        }
+        .description-content {
+          padding-left: 3em;
+          h1 {
+            font-size: 2em;
+          }
+        }
+      }
+      .dotted-border {
+        max-width: 130px;
+      }
+      .reverse-triangle {
+        max-width: 270px;
+      }
+    }
+    .amazing-mockups {
+      .amazing-mockups-item {
+        max-width: 33%;
+      }
+      h2 {
+        margin: 0em 0em 30px;
+        font-size: 2em;
+      }
+    }
+
+    .how-it-work {
+      .steps {
+        .step-details {
+          strong {
+            font-size: 1em;
+            position: static;
+          }
+        }
+      }
+    }
+    .our-plan {
+      padding: 2em 0px;
+      h2 {
+        margin-bottom: 25px;
+        font-size: 2em;
+      }
+    }
+    .amazing-apparel {
+      .graphics2 {
+        max-width: 130px;
+      }
+      .graphics1 {
+        max-width: 120px;
+      }
+    }
+
+    .animated-icons {
+      display: none;
+    }
+
+    .reviews {
+      .testimonials-list {
+        padding: 0 1em;
+        h4 {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-description {
+    margin-bottom: 0px;
+    margin-top: 30px;
+    h1 {
+      font-size: 1.613em;
+    }
+    h3 {
+      font-size: 1.1em;
+    }
+  }
+  .app-flex-row {
+    display: block !important;
+  }
+  .content .banner .banner-description {
+    max-width: 100%;
+    padding-left: 0px;
+  }
+  .content {
+    h2 {
+      font-size: 1.5em;
+    }
+    .amazing-mockups {
+      padding: 2em 0px;
+      h2 {
+        margin: 0em 0em 30px;
+      }
+
+      .amazing-mockups-item {
+        display: inline-block;
+
+      }
+    }
+
+    .our-plan {
+      padding: 2em 0px;
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+    }
+
+    .personal-plan {
+      h2 {
+        padding: 17px 0px;
+      }
+    }
+    .how-it-work {
+      .steps {
+        .step {
+          padding-right: 0;
+          background: none;
+          background: none;
+          margin-bottom: 40px;
+        }
+
+        .step strong {
+          position: static;
+          margin-bottom: 25px;
+        }
+      }
+    }
+    .amazing-apparel {
+      h2 {
+        font-size: 1.5em;
+      }
+      .animated-icons {
+        bottom: -61% !important;
+      }
+      .RightBig-delay {
+        right: -15px !important;
+      }
+    }
+    .banner {
+      padding: 0 0 2.5em;
+      .reverse-triangle {
+        max-width: 260px;
+      }
+      .profile-image {
+        text-align: $align-center;
+        width: 100%;
+        .rightdelay {
+          top: 0;
+        }
+        .delay-fadeupbig {
+          right: 0px;
+        }
+      }
+      .delay-down {
+        left: 22px;
+        top: 25px;
+      }
+
+      .delay-fadeupbig {
+        bottom: 12%;
+        right: 0;
+      }
+    }
+
+    .graphics1,
+    .graphics2 {
+      display: none;
+    }
+
+    .amazing-apparel {
+      padding-top: 2.375em;
+
+      .animated-icons {
+        bottom: 0;
+        left: 1% !important;
+
+        .animation-iocn1 {
+          margin-right: 0.688em !important;
+          margin-bottom: 1.688em !important;
+        }
+      }
+      .RightBig-delay {
+        right: 13px;
+        top: 5px;
+      }
+    }
+    .fadeInUp {
+      bottom: 0 !important;
+      left: 0 !important;
+    }
+
+    .app-fluide {
+      padding: 0 1em;
+    }
+    .diamond,
+    .dotted-border,
+    .dashed-right,
+    .triangle-animation {
+      display: none;
+    }
+  }
+}

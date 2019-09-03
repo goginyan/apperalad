@@ -1,0 +1,88 @@
+<div class="content">
+  <div class="payment-process register-page">
+    <div class="animation-element">
+      <img class="moving-icon top-element bounceInDown animated" src="assets/img/banner-element2.svg">
+      <div class="container">
+        <img class="moving-icon middle-element fadeInLeftBig animated" src="assets/img/square-icon.svg">
+        <img class="moving-icon right-element fadeInRightBig animated" src="assets/img/banner-element2.svg">
+        <img class="moving-icon bottom-element fadeInRightBig animated" src="assets/img/element3.svg">
+        <img class="moving-icon dashed-traiangle bounceInDown animated" src="assets/img/dashed-traiangle.svg">
+        <div class="register-container text-left">
+          <div class="form-detail">
+            <h1>Choose your payment method to subscribe</h1>
+            <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+              <div class="payment-option">
+                <h5> Pay with <strong> Credit Card </strong> </h5>
+                <ul>
+                  <li><img src="assets/img/visa-card.jpg" alt="visa" /></li>
+                  <li><img src="assets/img/discover.jpg" alt="discover" /></li>
+                  <li><img src="assets/img/bluesnap.jpg" alt="bluesnap" /></li>
+                </ul>
+
+              </div>
+
+
+              <div class="form-group">
+                <label class="fm-label">Card Number</label>
+                <input type="text" formControlName="cardNo" class="form-control" />
+                <div *ngIf="submitted && f.cardNo.errors" class="invalid-feedback">
+                  <div *ngIf="f.cardNo.errors.required">Please enter card number.</div>
+                </div>
+              </div>
+
+              <div class="app-flex-row appspace-content-between credit-details">
+
+                <div class="half-col">
+                  <label class="fm-label">Expiration</label>
+
+                  <div class="app-flex-row appspace-content-between expiration-detail">
+                    <div class="half-col">
+
+                      <input type="text" formControlName="expMonth" class="form-control" placeholder="MM" />
+                      <div *ngIf="submitted && f.expMonth.errors" class="invalid-feedback">
+                        <div *ngIf="f.expMonth.errors.required">Expiry Month is required</div>
+                      </div>
+
+                    </div>
+                    <div class="half-col">
+
+                      <input type="text" formControlName="expYear" class="form-control" placeholder="YY" />
+                      <div *ngIf="submitted && f.expYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.expYear.errors.required">Expiry year is required</div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="half-col">
+                  <label class="fm-label">Security Code</label>
+                  <input type="text" formControlName="cardCVV" class="form-control" />
+                  <div *ngIf="submitted && f.cardCVV.errors" class="invalid-feedback">
+                    <div *ngIf="f.cardCVV.errors.required">Please enter CVV number.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <button class="blue-btn" [disabled]="!paymentForm.valid">Pay Now</button>
+              </div>
+
+              <div class="paypal-method">
+                <p> <strong> Or pay via </strong> <a href="#"> <img src="assets/img/paypal.jpg" alt="paypal" /> </a> </p>
+                </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <img class="moving-icon bottom-graphic" src="assets/img/amazing-graphics2.svg">
+
+      <div class="triangle-arrow">
+        <img class="big-triangle bounceInUp animated" src="assets/img/triangle-big-arrow.svg">
+        <img class="small-triangle bounceInUp animated" src="assets/img/triangle-small-arrow.svg">
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="content">
+  <div class="register-page jumbotron">
+    <div class="animation-element">
+      <img class="moving-icon top-element bounceInDown animated" src="assets/img/banner-element2.svg">
+      <div class="container">
+        <img class="moving-icon middle-element fadeInLeftBig animated" src="assets/img/square-icon.svg">
+        <img class="moving-icon right-element fadeInRightBig animated" src="assets/img/banner-element2.svg">
+        <img class="moving-icon bottom-element fadeInRightBig animated" src="assets/img/element3.svg">
+        <img class="moving-icon dashed-traiangle bounceInDown animated" src="assets/img/dashed-traiangle.svg">
+
+        <div class="register-container text-center">
+          <div class="form-detail">
+            <h1>Edit Account</h1>
+
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()" autocomplete="off">
+              <div class="alert alert-danger">
+                <p *ngFor="let error of formErrors">{{ error }}</p>
+              </div>
+              <h5 class="text-left"> Basic info </h5>
+              <div class="form-group">
+                <input type="text" formControlName="first_name" name="first_name" class="form-control"
+                  placeholder="Name" />
+                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                  <div *ngIf="f.first_name.errors.required">First name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="last_name" name="last_name" class="form-control"
+                  placeholder="Last Name" />
+                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                  <div *ngIf="f.last_name.errors.required">Last name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="email" name="email" class="form-control" placeholder="Email" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="password" formControlName="password" name="password" class="form-control"
+                  placeholder="Password" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">password is required</div>
+                  <div *ngIf="f.password.errors.minlength">Confirm Password must be at least 6 characters
+                    </div>
+                </div>
+              </div>
+
+              <!-- <div class="form-group">
+                <input type="password" formControlName="cpassword" appConfirmEqualValidator="password" name="cpassword"
+                  class="form-control" placeholder="Confirm Password" />
+                <div *ngIf="submitted && f.cpassword.errors" class="invalid-feedback">
+                  <div *ngIf="f.cpassword.errors.required">Confirm Password is required</div>
+                  <div *ngIf="f.cpassword.errors.minlength">Confirm Password must be at least 6 characters
+                  </div>
+                </div>
+                <div class="invalid-feedback" *ngIf="f.cpassword.touched && f.cpassword.errors?.notEqual &&
+                    !f.cpassword.errors?.required">
+                    Password and Confirm Password does not match
+                  </div>
+              </div> -->
+
+              <input type="hidden" formControlName="token" class="form-control" />
+              <div class="form-group text-right">
+                <button class="white-btn" routerLink="/">Cancel</button>
+                <button class="blue-btn" type="submit" [disabled]="!editForm.valid">Save</button>
+                <div *ngIf="submitted" style="text-align:center;">
+                  <div class="loader"></div>
+                </div>
+              </div>
+            </form>
+
+            <div class="subscription-details text-left">
+              <h4> Subscription Details </h4>
+              <table cellpadding="0" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td> <strong>Subscription Started</strong></td>
+                    <td> 12/3/2019 </td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Current Subscription</strong></td>
+                    <td> $10.00 Paid Monthly </td>
+                  </tr>
+                  <tr>
+                    <td> <strong>Recurring On </strong></td>
+                    <td> 12/4/2019 </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-right">
+                <button class="white-btn" type="submit">Cancel Subscription</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <img class="moving-icon bottom-graphic" src="assets/img/amazing-graphics2.svg">
+      <img class="moving-icon dashed-left bounceInDown animated" src="assets/img/dashed-icon.svg">
+      <img class="moving-icon dashed-right bounceInDown animated" src="assets/img/dashed-icon.svg">
+
+      <div class="triangle-arrow">
+        <img class="big-triangle  bounceInUp animated" src="assets/img/triangle-big-arrow.svg">
+        <img class="small-triangle  bounceInUp animated" src="assets/img/triangle-small-arrow.svg">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="content">
+  <div class="register-page jumbotron">
+    <div class="animation-element">
+      <img class="moving-icon top-element bounceInDown animated" src="assets/img/banner-element2.svg">
+      <div class="container">
+        <img class="moving-icon middle-element fadeInLeftBig animated" src="assets/img/square-icon.svg">
+        <img class="moving-icon right-element fadeInRightBig animated" src="assets/img/banner-element2.svg">
+        <img class="moving-icon bottom-element fadeInRightBig animated" src="assets/img/element3.svg">
+        <img class="moving-icon dashed-traiangle bounceInDown animated" src="assets/img/dashed-traiangle.svg">
+
+        <div class="register-container text-center">
+          <div class="form-detail">
+            <h1>Lost your password?</h1>
+            <h5> Please enter your username or email address. You will receive a link to create a new password via email. </h5>
+            <form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
+              <div class="alert alert-danger">
+                <p *ngFor="let error of formErrors">{{ error }}</p>
+              </div>
+              <div class="form-group">
+                <input name="email" id="email" type="text" class="form-control" placeholder="Username"
+                  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">First Name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button class="blue-btn" type="submit" [disabled]="!forgotForm.valid">Submit</button>
+                <div *ngIf="submitted">
+                  <div class="loader"></div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <img class="moving-icon bottom-graphic" src="assets/img/amazing-graphics2.svg">
+      <img class="moving-icon dashed-left bounceInDown animated" src="assets/img/dashed-icon.svg">
+      <img class="moving-icon dashed-right bounceInDown animated" src="assets/img/dashed-icon.svg">
+
+      <div class="triangle-arrow">
+        <img class="big-triangle  bounceInUp animated" src="assets/img/triangle-big-arrow.svg">
+        <img class="small-triangle  bounceInUp animated" src="assets/img/triangle-small-arrow.svg">
+      </div>
+    </div>
+  </div>
+</div>

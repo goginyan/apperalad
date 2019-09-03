@@ -1,0 +1,55 @@
+<div class="our-plan text-center">
+  <section class="page-header">
+    <div class="small-container">
+      <h1> Get in touch </h1>
+      <h5>The #1 product mockup generator</h5>
+    </div>
+    <div class="animation-element">
+      <img class="moving-icon middle-element fadeInLeftBig animated" src="assets/img/square-icon.svg">
+      <img class="moving-icon top-element bounceInDown animated" src="assets/img/banner-element2.svg">
+      <img class="moving-icon dashed fadeInUpBig animated" src="assets/img/dashed-icon.svg">
+      <img class="moving-icon  right-element fadeInRightBig animated" src="assets/img/banner-element2.svg">
+      <img class="moving-icon dashed-traiangle bounceInDown animated" src="assets/img/bigtriangle.svg">
+      <img class="moving-icon blue-element bounceInDown animated" src="assets/img/element3.svg">
+      <div class="triangle-arrow">
+        <img class="big-triangle bounceInUp animated" src="assets/img/triangle-big-arrow.svg">
+        <img class="small-triangle bounceInUp animated" src="assets/img/triangle-small-arrow.svg">
+      </div>
+    </div>
+  </section>
+  <div class="content">
+    <div class="small-container">
+      <section class="contact-fm">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="alert alert-danger">
+            <p *ngFor="let error of formErrors">{{ error }}</p>
+          </div>
+          <div class="form-group">
+            <input name="name" id="name" type="text" class="form-control" placeholder="Your Name" formControlName="name"
+              [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required>
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Your Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input name="email" id="email" type="email" class="form-control" placeholder="Email Address"
+              formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email Address is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="comments" class="form-control" placeholder="Comments" formControlName="comments"></textarea>
+            <div *ngIf="submitted && f.comments.errors" class="invalid-feedback">
+              <div *ngIf="f.comments.errors.required">Comments are required</div>
+            </div>
+            <button class="blue-btn" type="submit" [disabled]="!contactForm.valid">Create</button>
+            <div *ngIf="submitted">
+              <div class="loader"></div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="our-plan text-center">
+  <section class="page-header">
+    <div class="small-container">
+      <h1>Select a Mockup {{isPaidUser}}</h1>
+    </div>
+    <div class="animation-element">
+      <img
+        class="moving-icon middle-element fadeInLeftBig animated"
+        src="assets/img/square-icon.svg"
+      />
+      <img
+        class="moving-icon top-element bounceInDown animated"
+        src="assets/img/banner-element2.svg"
+      />
+      <img
+        class="moving-icon dashed fadeInUpBig animated"
+        src="assets/img/dashed-icon.svg"
+      />
+      <img
+        class="moving-icon  right-element fadeInRightBig animated"
+        src="assets/img/banner-element2.svg"
+      />
+      <img
+        class="moving-icon dashed-traiangle bounceInDown animated"
+        src="assets/img/bigtriangle.svg"
+      />
+      <img class="moving-icon blue-element" src="assets/img/element3.svg" />
+      <div class="triangle-arrow">
+        <img
+          class="big-triangle bounceInUp animated"
+          src="assets/img/triangle-big-arrow.svg"
+        />
+        <img
+          class="small-triangle bounceInUp animated"
+          src="assets/img/triangle-small-arrow.svg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="container">
+      <section class="amazing-mockups">
+        <div class="sorting-mockup text-right">
+          <select class="select-css"  [(ngModel)]="selectedCategory" (ngModelChange)="onChange($event)" name="sel2">
+            <!-- <select class="select-css" [(ngModel)]="selected"> -->
+            <option *ngFor="let category of categories;let i= index;" [value]="category.name" selected="i==0" #selectbox>{{category.name}}</option>
+          </select>
+        </div>
+
+        <div class="app-flex-row amazing-mockups-list">
+          <div class="amazing-mockups-item" *ngFor="let product of products">
+            <a [routerLink]="['/details/', product.id]"><img [src]="product.back_cover_image" alt="mockup-1" />
+            </a>
+          </div>
+        </div>
+      </section>
+      <div *ngIf="isPaidUser" class="subscriberPop">
+        <div class="popContent">
+          <h4>You are not allowed to access this page!</h4>
+          <a class="blue-btn" routerLink="/payment">Subscribe now</a>
+        </div>
+      </div>
+      <div *ngIf="notLoggedIn" class="subscriberPop">
+          <div class="popContent">
+              <h4>You are not LoggedIn!</h4>
+              <a class="blue-btn" routerLink="/register">Register & Subscribe now</a>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

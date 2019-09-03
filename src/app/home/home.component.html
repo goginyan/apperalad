@@ -1,0 +1,133 @@
+<div class="content">
+
+  <!-- BANNER-->
+  <section class="banner">
+    <div class="animation-elements">
+      <img class="animate delay-down bounceInDown animated" src="assets/img/banner-element2.svg">
+      <img class="animate bounceInDown animated dotted-border" src="assets/img/dotted-border.svg">
+      <img _ngcontent-nrt-c3="" class="moving-icon dashed-right bounceInDown animated"
+        src="assets/img/dashed-icon.svg">
+    </div>
+    <div class="triangle-animation">
+      <div class="big-traingle"> </div>
+      <div class="small-traingle"> </div>
+    </div>
+    <div class="container">
+      <img class="reverse-triangle animated" src="assets/img/reverse-triangle-home.svg" alt="profile-image" />
+      <div class="app-flex-row flex-row-reverse">
+
+        <div class="profile-image">
+          <img class="animate rightdelay fadeInRightBig animated" src="assets/img/banner-element2.svg">
+          <img class="fadeInUp animated" src="assets/img/profile-img.png" alt="profile-image" />
+          <div class="animate delay-fadeupbig fadeInRightBig circle"> </div>
+        </div>
+        <div class="banner-description">
+          <div class="description-content text-center">
+            <h1>Create amazing apparel mockups in seconds</h1>
+            <h3>Save Time And Boost Your Sales</h3>
+            <a routerLink="register" class="blue-btn"> Create </a>
+          </div>
+          <div class="animate delay fadeInUp fadeInLeftBig diamond"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOCKUPS-->
+  <section class="amazing-mockups text-center">
+    <div class="mini-container">
+      <h2> You can create <strong> amazing mockups</strong>, just like those </h2>
+      <div class="app-flex-row amazing-mockups-list">
+        <div class="amazing-mockups-item"><img src="assets/img/mockups.jpg" alt="mockups" /> </div>
+        <div class="amazing-mockups-item"><img src="assets/img/mockups1.jpg" alt="mockups1" /></div>
+        <div class="amazing-mockups-item"><img src="assets/img/mockups2.jpg" alt="mockups2" /></div>
+        <div class="amazing-mockups-item"><img src="assets/img/mockups3.jpg" alt="mockups3" /></div>
+        <div class="amazing-mockups-item"><img src="assets/img/mockups4.jpg" alt="mockups4" /></div>
+        <div class="amazing-mockups-item"><img src="assets/img/mockups5.jpg" alt="mockups1" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO WORK-->
+  <section class="how-it-work text-center">
+    <div class="mini-container">
+      <div class="app-fluide">
+        <h2> How it works </h2>
+        <h3> Ready-to-use product mockups right inside your browser </h3>
+        <div class="app-flex-row appspace-content-between steps">
+          <div class="step steps-1">
+            <div class="step-details"><img src="assets/img/step-1.svg" alt="step-1" /> <strong>Choose a mockup you
+                like</strong></div>
+          </div>
+          <div class="step steps-2">
+            <div class="step-details"><img src="assets/img/step-2.svg" alt="step-2" /> <strong>Upload your photo
+              </strong></div>
+          </div>
+          <div class="step steps-3">
+            <div class="step-details"> <img src="assets/img/step-3.svg" alt="step-3" /> <strong>Export or share the
+                final image <br> in super-high resolution </strong> </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PLAN-->
+  <section class="our-plan text-center">
+    <div class="small-container">
+      <h2> All-inclusive pricing made for everyone <strong> Save up to 35% </strong> with annual billing </h2>
+      <h5> Pricing & plans </h5>
+      <div class="personal-plan">
+        <h2>Personal</h2>
+        <div class="plan-details">
+          <div class="price">
+            <sup> $</sup>
+            <strong>10</strong><sup>.00 </sup>
+          </div>
+          <ul class="plan-list">
+            <li> 1 Month Subscription </li>
+            <li> Unlimited Downloads </li>
+            <li> Unlimited Downloads </li>
+          </ul>
+          <a class="blue-btn" routerLink="register"> Subscribe Now </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS-->
+  <section class="reviews text-center">
+    <div class="mini-container">
+      <h2> Reviews </h2>
+
+      <div class="app-flex-row text-center">
+
+        <div class="testimonials-list" *ngFor="let testimonial of testimonials">
+          <img [src]="testimonial.testimonial_image" alt="Lubos" />
+          <h4>{{testimonial.title}}</h4>
+          <h6>{{testimonial.position}}</h6>
+          <p [innerHTML]="testimonial.description"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMAZING APPAREL-->
+  <section class="amazing-apparel text-center">
+    <img class="graphics1" src="assets/img/amazing-graphics2.svg" />
+    <div class="triangle-animation">
+      <div class="big-traingle"> </div>
+      <div class="small-traingle"> </div>
+    </div>
+    <div class="container">
+      <h2> Create amazing apparel mockups in seconds </h2>
+      <a class="blue-btn" routerLink="register"> Let’s create </a>
+      <div class="animated-icons">
+        <img class="animation-iocn1" src="assets/img/banner-element2.svg" />
+        <img class="animation-iocn2" src="assets/img/element3.svg">
+      </div>
+
+    </div>
+  </section>
+</div>
