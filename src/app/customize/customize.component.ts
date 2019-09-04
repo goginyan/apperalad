@@ -9,7 +9,7 @@ declare const fabric: any;
     styleUrls: ['./customize.component.css']
 })
 
-export class CustomizeComponent implements OnInit {
+export class CustomizeComponent  {
 
     private canvas: any;
     private props: any = {
@@ -159,6 +159,8 @@ export class CustomizeComponent implements OnInit {
                 peloas: 12
             });
             image.set({width: 150, height: 150});
+            //image.scaleToHeight(100);
+            //image.scaleToWidth(200);
             //image.setHeight(150);
             this.extend(image, this.randomId());
             this.canvas.add(image);
@@ -184,18 +186,8 @@ export class CustomizeComponent implements OnInit {
                 //image.setHeight(200);
                 this.extend(image, this.randomId());
                 this.canvas.add(image);
-                // let col = this.testImage();
-                // let filter = new fabric.Image.filters.Tint({
-                //   color: color // make it red!
-                //   // mode: 'tint',
-                //   // opacity: 0
-                //   // brightness: 0.05
-                // });
-                // image.filters.push(filter);
-                // image.applyFilters(this.canvas.renderAll.bind(this.canvas));
                 this.selectItemAfterAdded(image);
-                //this.canvas.filterBackend = new fabric.WebglFilterBackend();
-            });
+              });
         }
     }
     testImage() {

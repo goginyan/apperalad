@@ -19,12 +19,13 @@ export class DetailsComponent implements OnInit {
                 this.productId = param.id;
                 this.api.getProduct(this.productId).toPromise()
                     .then((res:any) => {
-                            console.log('response', res);
+                            //console.log('response', res);
                             this.productData = res.data;
+                            //console.log(this.productData.product_name);
                         }
                     )
                     .catch(err => {
-                        console.log(err)
+                        console.log(err);
                     });
 
                 /* .subscribe(
@@ -39,7 +40,7 @@ export class DetailsComponent implements OnInit {
 
 
             }
-        )
+         )
 
 
     }

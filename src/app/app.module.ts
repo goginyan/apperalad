@@ -24,7 +24,7 @@ import { EncdecServiceService } from './authentication/encdec-service.service';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validator.directive';
 import { ForgotComponent } from './forgot/forgot.component';
-import { CustomizeComponent } from './productdetails/customize/customize.component';
+import { CustomizeComponent } from './customize/customize.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 
 

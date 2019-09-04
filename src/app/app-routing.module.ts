@@ -13,7 +13,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { EditComponent } from './edit/edit.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ForgotComponent } from './forgot/forgot.component';
-import { CustomizeComponent } from './productdetails/customize/customize.component';
+import { CustomizeComponent } from './customize/customize.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, redirectTo: '', pathMatch: 'full' },
