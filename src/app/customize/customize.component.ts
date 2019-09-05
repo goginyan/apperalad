@@ -30,7 +30,7 @@ export class CustomizeComponent  {
     };
 
     private textString: string;
-    private url: string = '';
+    private url: string;
     private size: any = {
         width: 500,
         height: 500
@@ -102,7 +102,8 @@ export class CustomizeComponent  {
             }
         });
 
-        this.canvas.set({width: this.size.width, height: this.size.height});
+        this.canvas.setWidth(this.size.width);
+        this.canvas.setHeight(this.size.width);
         //this.canvas.setHeight(this.size.height);
 
         // get references to the html canvas element & its context
@@ -119,8 +120,9 @@ export class CustomizeComponent  {
     //Block "Size"
 
     changeSize(event: any) {
-        this.canvas.set({width: this.size.width, height: this.size.height});
-        //this.canvas.setHeight(this.size.height);
+        //this.canvas.setDimensions({width: this.size.width, height: this.size.height});
+        this.canvas.setWidth(this.size.width);
+        this.canvas.setHeight(this.size.height);
     }
 
     //Block "Add text"
@@ -182,8 +184,8 @@ export class CustomizeComponent  {
                     cornersize: 10,
                     hasRotatingPoint: true
                 });
-                image.set({width: 200, height: 200});
-                //image.setHeight(200);
+                image.scaleToWidth(200);
+               // image.set({width: 250, height: 250});
                 this.extend(image, this.randomId());
                 this.canvas.add(image);
                 this.selectItemAfterAdded(image);
@@ -276,14 +278,26 @@ export class CustomizeComponent  {
     setCanvasImage() {
         let self = this;
         if (this.props.canvasImage) {
-            this.canvas.setBackgroundColor({ source: this.props.canvasImage, repeat: 'repeat' }, function () {
+            this.canvas.setBackgroundColor({ source: this.props.canvasImage, repeat: 'no-repeat', width: 100 }, function () {
                 // self.props.canvasFill = '';
+               // console.log(this.props.canvasImage);
                 self.canvas.renderAll();
             });
         }
     }
+    setCanvasImages() {
+        if (this.props.canvasImage) {
+            this.canvas.setBackgroundImage(this.props.canvasImage, this.canvas.renderAll.bind(this.canvas), {
+                // self.props.canvasFill = '';
+                // console.log(this.props.canvasImage);
+                width: 400,
+                height: 400,
+                backgroundImageStretch: false
+               });
+        }
+    }
 
-    randomId() {
+   randomId() {
         return Math.floor(Math.random() * 999999) + 1;
     }
 
